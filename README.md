@@ -14,9 +14,14 @@ This Terraform module provisions an AWS Application Load Balancer (ALB) and rela
 ## Usage
 
 ```hcl
+provider "aws" {
+  region = "us-east-1"
+}
+ 
 module "alb" {
   source   = "./modules/alb"
   vpc_id   = data.aws_vpc.selected.id
   key_name = var.key-name
   subnets  = data.aws_subnets.pb-subnets.ids
 }
+```
