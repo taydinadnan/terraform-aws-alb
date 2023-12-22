@@ -1,13 +1,3 @@
-variable "vpc_id" {
-  type        = string
-  description = "VPC ID"
-}
-
-variable "key_name" {
-  type        = string
-  description = "Key Name"
-}
-
 resource "aws_security_group" "alb-sg" {
   name   = "ALBSecurityGroup"
   vpc_id = var.vpc_id
